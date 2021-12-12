@@ -6,6 +6,8 @@
 //  Copyright © 2019 wix. All rights reserved.
 //
 
+@import Firebase;
+
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -17,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+  [FIRApp configure];
 	return YES;
 }
 

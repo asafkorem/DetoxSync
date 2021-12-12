@@ -33,6 +33,7 @@ DTX_ALWAYS_INLINE
 void __detox_sync_dispatch_wrapper(void (*func)(dispatch_queue_t param1, dispatch_block_t param2), NSString* name, BOOL copy, dispatch_queue_t param1, dispatch_block_t _param2)
 {
 	dispatch_block_t param2 = copy ? [_param2 copy] : (id)_param2;
+    NSLog(@"------ copy block with address: %@\n--------- new address: %@", _param2, param2);
 	
 	DTXDispatchQueueSyncResource* sr = [DTXDispatchQueueSyncResource _existingSyncResourceWithQueue:param1];
 	NSString* identifier = [sr addWorkBlock:param2 operation:name moreInfo:nil];
@@ -43,6 +44,7 @@ void __detox_sync_dispatch_wrapper(void (*func)(dispatch_queue_t param1, dispatc
 		
 		if(copy == YES)
 		{
+            NSLog(@"------ release copied block with address(param2): %@", param2);
 			[param2 release];
 		}
 	});
@@ -52,6 +54,7 @@ DTX_ALWAYS_INLINE
 void __detox_sync_dispatch_group_wrapper(void (*func)(dispatch_group_t param1, dispatch_queue_t param2, dispatch_block_t param3), NSString* name, BOOL copy, dispatch_group_t param1, dispatch_queue_t param2, dispatch_block_t _param3)
 {
 	dispatch_block_t param3 = copy ? [_param3 copy] : (id)_param3;
+  NSLog(@"------ copy block with address: %@\n--------- new address (param3): %@", _param3, param3);
 	
 	DTXDispatchQueueSyncResource* sr = [DTXDispatchQueueSyncResource _existingSyncResourceWithQueue:param2];
 	NSString* identifier = [sr addWorkBlock:param3 operation:name moreInfo:nil];
@@ -62,6 +65,7 @@ void __detox_sync_dispatch_group_wrapper(void (*func)(dispatch_group_t param1, d
 		if(copy == YES)
 		{
 			[param3 release];
+        NSLog(@"------ release copied block with address (param3): %@", param3);
 		}
 	});
 }

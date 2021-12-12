@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,9 @@
 		39BB5F5D22EDE6A30092C12A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BB5F5B22EDE6A30092C12A /* LaunchScreen.storyboard */; };
 		39BB5F6022EDE6A30092C12A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39BB5F5F22EDE6A30092C12A /* main.m */; };
 		39DE8F3422F150B300780546 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DE8F3322F150B300780546 /* TableViewController.m */; };
+		60918DBC2764FEF600949E06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60918DB82764FEF600949E06 /* GoogleService-Info.plist */; };
+		60918DBF276500A400949E06 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 60918DBE276500A400949E06 /* FirebaseAppCheck */; };
+		60918DC1276500A400949E06 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 60918DC0276500A400949E06 /* FirebasePerformance */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 39DE8F5122F707DD00780546;
 			remoteInfo = DetoxSync;
+		};
+		60918DBA2764FEF600949E06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39DE8F5D22F707DD00780546 /* DetoxSync.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 602F956A274528ED00BAFA74;
+			remoteInfo = DetoxSyncTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -66,6 +76,7 @@
 		39DE8F3222F150B300780546 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		39DE8F3322F150B300780546 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		39DE8F5D22F707DD00780546 /* DetoxSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DetoxSync.xcodeproj; path = ../DetoxSync/DetoxSync.xcodeproj; sourceTree = "<group>"; };
+		60918DB82764FEF600949E06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60918DBF276500A400949E06 /* FirebaseAppCheck in Frameworks */,
 				395B508422F9E8890097E6BB /* DetoxSync.framework in Frameworks */,
+				60918DC1276500A400949E06 /* FirebasePerformance in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				395B507F22F9E86E0097E6BB /* DetoxSync.framework */,
+				60918DBB2764FEF600949E06 /* DetoxSyncTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +123,7 @@
 		39BB5F4C22EDE6A20092C12A /* TimersTest */ = {
 			isa = PBXGroup;
 			children = (
+				60918DB82764FEF600949E06 /* GoogleService-Info.plist */,
 				39BB5F4D22EDE6A20092C12A /* AppDelegate.h */,
 				39BB5F4E22EDE6A20092C12A /* AppDelegate.m */,
 				39BB5F5022EDE6A20092C12A /* SceneDelegate.h */,
@@ -151,6 +166,10 @@
 				395B508222F9E87F0097E6BB /* PBXTargetDependency */,
 			);
 			name = TimersTest;
+			packageProductDependencies = (
+				60918DBE276500A400949E06 /* FirebaseAppCheck */,
+				60918DC0276500A400949E06 /* FirebasePerformance */,
+			);
 			productName = TimersTest;
 			productReference = 39BB5F4A22EDE6A20092C12A /* TimersTest.app */;
 			productType = "com.apple.product-type.application";
@@ -178,6 +197,9 @@
 				Base,
 			);
 			mainGroup = 39BB5F4122EDE6A20092C12A;
+			packageReferences = (
+				60918DBD276500A400949E06 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 39BB5F4B22EDE6A20092C12A /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -201,6 +223,13 @@
 			remoteRef = 395B507E22F9E86E0097E6BB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		60918DBB2764FEF600949E06 /* DetoxSyncTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DetoxSyncTests.xctest;
+			remoteRef = 60918DBA2764FEF600949E06 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -209,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39BB5F5D22EDE6A30092C12A /* LaunchScreen.storyboard in Resources */,
+				60918DBC2764FEF600949E06 /* GoogleService-Info.plist in Resources */,
 				39BB5F5A22EDE6A30092C12A /* Assets.xcassets in Resources */,
 				39BB5F5822EDE6A20092C12A /* Main.storyboard in Resources */,
 			);
@@ -429,6 +459,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60918DBD276500A400949E06 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60918DBE276500A400949E06 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60918DBD276500A400949E06 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		60918DC0276500A400949E06 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60918DBD276500A400949E06 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39BB5F4222EDE6A20092C12A /* Project object */;
 }
